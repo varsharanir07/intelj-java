@@ -3,19 +3,14 @@ package org.example;
 public class HelloApp {
     public static void main(String[] args) {
 
-        StringBuilder nameBuilder = new StringBuilder();
+        String result;
 
         if (args.length == 0) {
-            System.out.println("Hello, World!");
+            result = "World";
         } else {
-            for (String name : args) {
-                nameBuilder.append(name).append(", ");
-            }
-
-            // Remove trailing ", "
-            String result = nameBuilder.substring(0, nameBuilder.length() - 2);
-
-            System.out.println("Hello, " + result + "!");
+            result = String.join(", ", args);
         }
+
+        System.out.println("Hello, " + result + "!");
     }
 }
