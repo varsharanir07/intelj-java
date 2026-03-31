@@ -3,14 +3,19 @@ package org.example;
 public class HelloApp {
     public static void main(String[] args) {
 
-        String result;
+        StringBuilder names = new StringBuilder();
 
-        if (args.length > 0) {
-            result = String.join(", ", args);
+        if (args.length == 0) {
+            names.append("World");
         } else {
-            result = "World";
+            for (String name : args) {
+                if (names.length() > 0) {
+                    names.append(", ");
+                }
+                names.append(name);
+            }
         }
 
-        System.out.println("Hello, " + result + "!");
+        System.out.println("Hello, " + names + "!");
     }
 }
